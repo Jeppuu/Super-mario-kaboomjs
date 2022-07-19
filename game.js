@@ -8,18 +8,18 @@ kaboom({
 });
 
 // loading the sprites
-//loadRoot('https://imgur.com/')
-loadSprite('brick','https://imgur.com/pogC9x5')
-loadSprite('coin','https://imgur.com/wbKxhcd')
-loadSprite('evil-shroom','https://imgur.com/KPO3fR9')
-loadSprite('mario','https://imgur.com/Wb1qfhK')
-loadSprite('mushroom','https://imgur.com/0wMd92p')
-loadSprite('pipe','https://imgur.com/rl3cTER')
-loadSprite('surprise','https://imgur.com/gesQ1KP')
-loadSprite('unboxed','https://imgur.com/bdrLpi6')
-loadSprite('block','sprites/block.png')
-loadSprite('block2','sprites/block2.png')
-loadSprite('hill','sprites/hill.png')
+loadRoot('sprites/')
+loadSprite('brick','brick.png')
+loadSprite('coin','coin.png')
+loadSprite('evil-shroom','evil-shroom-.png')
+loadSprite('mario','mario.png')
+loadSprite('mushroom','mushroom.png')
+loadSprite('pipe','pipe.png')
+loadSprite('surprise','surprise.png')
+loadSprite('unboxed','unboxed.png')
+loadSprite('block','block.png')
+loadSprite('block2','block2.png')
+loadSprite('hill','hill.png')
 
 //making two levels
 const LEVELS = [
