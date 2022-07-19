@@ -193,7 +193,7 @@ scene("game", (levelNumber = 0) => {
 
   add([
     text("Level " + (levelNumber + 1), { size: 24 }),
-    pos(vec2(160, 120)),
+    pos(width/2,height/2),
     color(255, 255, 255),
     origin("center"),
     layer('ui'),
