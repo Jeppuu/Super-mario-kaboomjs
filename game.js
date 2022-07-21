@@ -166,7 +166,7 @@ scene("start", () => {
 
 go("start");
 //add game scene
-scene("game", (levelNumber = 0) => {
+scene("game", () => {
 
   layers([
     "bg",
@@ -174,8 +174,8 @@ scene("game", (levelNumber = 0) => {
     "ui",
   ], "game");
 
-
-  const level = addLevel(LEVELS[levelNumber], levelConf);
+  var levelNumber = LEVELS[0];
+  const level = addLevel(levelNumber, levelConf);
 
   /*add([
     sprite("cloud"),
