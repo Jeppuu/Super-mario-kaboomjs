@@ -21,134 +21,6 @@ loadSprite('block','block.png')
 loadSprite('block2','block2.png')
 loadSprite('hill','hill.png')
 
-//making two levels
-const LEVELS = [
-  [
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "      -?-b-                                                                         ",
-    "                                                    ?        ?                      ",
-    "                                                        ?                           ",
-    "                                 n    n                                             ",
-    "                           nn    n    n                  n                          ",
-    "       E                   nn    n    n   E   E         nn                P         ",
-    "================     ===============================================================",
-    "================     ===============================================================",
-  ],
-  [
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                                       ?                                            ",
-    "                                                                                    ",
-    "                                   -?-                                              ",
-    "                                                                                    ",
-    "      -?-b-                  -?-                                                    ",
-    "                                                                                    ",
-    "                                                                                    ",
-    "                           n                                                        ",
-    "                         n n                                                        ",
-    "       P                nn n                           P          E    E            ",
-    "================     ===============================================================",
-    "================     ===============================================================",
-  ]
-];
-//level config
-const levelConf = {
-  width: 20,
-  height: 20,
-  pos: vec2(0, 0),
-  // define each object as a list of components
-  "=": () => [
-    sprite("block"),
-    area(),
-    solid(),
-    origin("bot"),
-    "ground"
-  ],
-  "-": () => [
-    sprite("brick"),
-    area(),
-    solid(),
-    origin("bot"),
-    "brick"
-  ],
-  "?": () => [
-    sprite("surprise"),
-    area(),
-    solid(),
-    origin("bot"),
-    "surprise",
-    "coinBox"
-  ],
-  "b": () => [
-    sprite("surprise"),
-    area(),
-    solid(),
-    origin("bot"),
-    "surprise",
-    "mushyBox"
-  ],
-  "!": () => [
-    sprite("unboxed"),
-    area(),
-    solid(),
-   // bump(),
-    origin("bot"),
-    "unboxed"
-  ],
-  "c": () => [
-    sprite("coin"),
-    area(),
-    solid(),
-    //bump(64, 8),
-    cleanup(),
-    origin("bot"),
-    "coin"
-  ],
-  "M": () => [
-    sprite("mushroom"),
-    area(),
-    solid(),
-    //patrol(10000),
-    body(),
-    cleanup(),
-    origin("bot"),
-    "mushroom"
-  ],
-  "P": () => [
-    sprite("pipe"),
-    area(),
-    solid(),
-    origin("bot"),
-    "pipe"
-  ],
-  "E": () => [
-    sprite("evil-shroom"),
-    area(),
-    solid(),
-    body(),
-    //patrol(50),
-    //enemy(),
-    origin("bot"),
-    "badGuy"
-  ],
-  "p": () => [
-    sprite("mario"),
-    area(),
-    body(),
-    //mario(),
-    //bump(150, 20, false),
-    origin("bot"),
-    "player"
-  ]
-};
-
 //adding scenes
 scene("start", () => {
 
@@ -168,11 +40,134 @@ go("start");
 //add game scene
 scene("game", () => {
 
-  layers([
-    "bg",
-    "game",
-    "ui",
-  ], "game");
+  layers(["bg","game","ui",], "game");
+
+  //making two levels
+  const LEVELS = [
+    [
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "      -?-b-                                                                         ",
+      "                                                    ?        ?                      ",
+      "                                                        ?                           ",
+      "                                 n    n                                             ",
+      "                           nn    n    n                  n                          ",
+      "       E                   nn    n    n   E   E         nn                P         ",
+      "================     ===============================================================",
+      "================     ===============================================================",
+    ],
+    [
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                                       ?                                            ",
+      "                                                                                    ",
+      "                                   -?-                                              ",
+      "                                                                                    ",
+      "      -?-b-                  -?-                                                    ",
+      "                                                                                    ",
+      "                                                                                    ",
+      "                           n                                                        ",
+      "                         n n                                                        ",
+      "       P                nn n                           P          E    E            ",
+      "================     ===============================================================",
+      "================     ===============================================================",
+    ]
+  ];
+  //level config
+  const levelConf = {
+    width: 20,
+    height: 20,
+    // define each object as a list of components
+    "=": () => [
+      sprite("block"),
+      area(),
+      solid(),
+      origin("bot"),
+      "ground"
+    ],
+    "-": () => [
+      sprite("brick"),
+      area(),
+      solid(),
+      origin("bot"),
+      "brick"
+    ],
+    "?": () => [
+      sprite("surprise"),
+      area(),
+      solid(),
+      origin("bot"),
+      "surprise",
+      "coinBox"
+    ],
+    "b": () => [
+      sprite("surprise"),
+      area(),
+      solid(),
+      origin("bot"),
+      "surprise",
+      "mushyBox"
+    ],
+    "!": () => [
+      sprite("unboxed"),
+      area(),
+      solid(),
+     // bump(),
+      origin("bot"),
+      "unboxed"
+    ],
+    "c": () => [
+      sprite("coin"),
+      area(),
+      solid(),
+      //bump(64, 8),
+      cleanup(),
+      origin("bot"),
+      "coin"
+    ],
+    "M": () => [
+      sprite("mushroom"),
+      area(),
+      solid(),
+      //patrol(10000),
+      body(),
+      cleanup(),
+      origin("bot"),
+      "mushroom"
+    ],
+    "P": () => [
+      sprite("pipe"),
+      area(),
+      solid(),
+      origin("bot"),
+      "pipe"
+    ],
+    "E": () => [
+      sprite("evil-shroom"),
+      area(),
+      solid(),
+      body(),
+      //patrol(50),
+      //enemy(),
+      origin("bot"),
+      "badGuy"
+    ],
+    "p": () => [
+      sprite("mario"),
+      area(),
+      body(),
+      //mario(),
+      //bump(150, 20, false),
+      origin("bot"),
+      "player"
+    ]
+  };
 
   var levelNumber = LEVELS[0];
   const level = addLevel(levelNumber, levelConf);
@@ -190,14 +185,12 @@ scene("game", () => {
     origin("bot")
   ])
 
-
   add([
     text("Level " + (levelNumber + 1), { size: 24 }),
-    pos(width/2,height/2),
+    pos(width/2,5),
     color(255, 255, 255),
     origin("center"),
-    layer('ui'),
-    lifespan(1, { fade: 0.5 })
+    layer('ui')
   ]);
 
   const player = level.spawn("p", 1, 10)
